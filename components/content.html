@@ -1,0 +1,225 @@
+<!-- ============================================================
+     CONTENT PRODUCT COMPONENT
+     File: components/content.html
+     Berisi: Galeri foto produk, detail produk, harga, pilihan
+             varian, tombol beli, dan informasi pengiriman
+     ============================================================ -->
+<section class="content-product">
+
+  <!-- Breadcrumb -->
+  <nav class="flex items-center gap-2 text-xs text-warm-mid mb-6" aria-label="Breadcrumb">
+    <a href="#" class="hover:text-terracotta transition-colors">Beranda</a>
+    <svg class="w-3 h-3 text-sand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+    <a href="#" class="hover:text-terracotta transition-colors">Batik</a>
+    <svg class="w-3 h-3 text-sand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+    <span class="text-warm-dark font-medium">Batik Tulis Motif Parang</span>
+  </nav>
+
+  <!-- Product Grid: Gambar kiri + Detail kanan -->
+  <div class="grid grid-cols-2 gap-8">
+
+    <!-- Kolom Kiri: Galeri Foto -->
+    <div>
+      <!-- Foto Utama -->
+      <div class="relative rounded-2xl overflow-hidden bg-white border border-border-warm aspect-square mb-3 group">
+        <img
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+          alt="Batik Tulis Motif Parang Rusak — tampak depan"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          id="main-product-image"
+        />
+        <!-- Badge diskon -->
+        <div class="absolute top-4 left-4">
+          <span class="bg-terracotta text-white text-xs font-bold px-3 py-1 rounded-full">-25%</span>
+        </div>
+        <!-- Badge stok -->
+        <div class="absolute top-4 right-4">
+          <span class="badge">Stok Terbatas</span>
+        </div>
+        <!-- Zoom hint -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-warm-dark/5">
+          <span class="bg-white/90 text-warm-dark text-xs px-3 py-1.5 rounded-full shadow">🔍 Perbesar</span>
+        </div>
+      </div>
+
+      <!-- Thumbnail Gallery -->
+      <div class="flex gap-2 overflow-x-auto pb-1">
+        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80')"
+          class="thumbnail-btn shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 border-terracotta">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=150&q=70" class="w-full h-full object-cover" alt="Thumbnail 1"/>
+        </button>
+        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1604440977230-e3a4d2dde39f?w=600&q=80')"
+          class="thumbnail-btn shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 border-border-warm hover:border-terracotta transition-colors">
+          <img src="https://images.unsplash.com/photo-1604440977230-e3a4d2dde39f?w=150&q=70" class="w-full h-full object-cover" alt="Thumbnail 2"/>
+        </button>
+        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1571513722275-4b41940f54b8?w=600&q=80')"
+          class="thumbnail-btn shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 border-border-warm hover:border-terracotta transition-colors">
+          <img src="https://images.unsplash.com/photo-1571513722275-4b41940f54b8?w=150&q=70" class="w-full h-full object-cover" alt="Thumbnail 3"/>
+        </button>
+        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1592409508867-64d72c4c2a87?w=600&q=80')"
+          class="thumbnail-btn shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 border-border-warm hover:border-terracotta transition-colors">
+          <img src="https://images.unsplash.com/photo-1592409508867-64d72c4c2a87?w=150&q=70" class="w-full h-full object-cover" alt="Thumbnail 4"/>
+        </button>
+      </div>
+    </div>
+
+    <!-- Kolom Kanan: Detail Produk -->
+    <div class="flex flex-col gap-5">
+
+      <!-- Nama & Rating -->
+      <div>
+        <span class="badge mb-2">Batik Tulis Premium</span>
+        <h1 class="font-display text-3xl text-warm-dark leading-snug mt-1">
+          Batik Tulis Motif Parang Rusak
+        </h1>
+        <p class="text-warm-mid text-sm mt-1">oleh <a href="#" class="text-terracotta hover:underline font-medium">Rumah Batik Sekar Jagad</a></p>
+
+        <!-- Rating -->
+        <div class="flex items-center gap-2 mt-2">
+          <div class="flex text-terracotta text-sm" aria-label="Rating 4.8 dari 5">
+            ★★★★★
+          </div>
+          <span class="text-sm font-medium text-warm-dark">4.8</span>
+          <span class="text-xs text-warm-mid">(248 ulasan)</span>
+          <span class="text-border-warm">·</span>
+          <span class="text-xs text-warm-mid">1.2k terjual</span>
+        </div>
+      </div>
+
+      <div class="divider my-0"></div>
+
+      <!-- Harga -->
+      <div>
+        <div class="flex items-baseline gap-3">
+          <span class="font-display text-3xl font-semibold text-terracotta">Rp 487.500</span>
+          <span class="text-warm-mid line-through text-lg">Rp 650.000</span>
+        </div>
+        <p class="text-xs text-warm-mid mt-1">Harga sudah termasuk PPN · Gratis ongkir ke Jawa-Bali</p>
+      </div>
+
+      <!-- Pilih Ukuran -->
+      <div>
+        <p class="text-sm font-medium text-warm-dark mb-2">Pilih Ukuran <span class="text-warm-mid font-normal">(dipilih: M)</span></p>
+        <div class="flex gap-2 flex-wrap">
+          <button class="size-btn px-5 py-2 rounded-lg border-2 border-border-warm text-sm hover:border-terracotta transition-colors text-warm-mid">S</button>
+          <button class="size-btn px-5 py-2 rounded-lg border-2 border-terracotta bg-terracotta-pale text-sm text-terracotta font-medium">M</button>
+          <button class="size-btn px-5 py-2 rounded-lg border-2 border-border-warm text-sm hover:border-terracotta transition-colors text-warm-mid">L</button>
+          <button class="size-btn px-5 py-2 rounded-lg border-2 border-border-warm text-sm hover:border-terracotta transition-colors text-warm-mid">XL</button>
+          <button class="size-btn px-5 py-2 rounded-lg border-2 border-border-warm text-sm hover:border-terracotta transition-colors text-warm-mid">XXL</button>
+        </div>
+        <a href="#" class="text-xs text-terracotta hover:underline mt-1.5 inline-block">Panduan Ukuran →</a>
+      </div>
+
+      <!-- Pilih Warna -->
+      <div>
+        <p class="text-sm font-medium text-warm-dark mb-2">Warna <span class="text-warm-mid font-normal">(dipilih: Indigo Klasik)</span></p>
+        <div class="flex gap-2">
+          <button class="w-9 h-9 rounded-full border-2 border-terracotta bg-indigo-900 ring-2 ring-terracotta ring-offset-2" title="Indigo Klasik" aria-pressed="true"></button>
+          <button class="w-9 h-9 rounded-full border-2 border-border-warm bg-amber-700 hover:border-terracotta transition-colors" title="Coklat Sogan"></button>
+          <button class="w-9 h-9 rounded-full border-2 border-border-warm bg-emerald-800 hover:border-terracotta transition-colors" title="Hijau Daun"></button>
+          <button class="w-9 h-9 rounded-full border-2 border-border-warm bg-stone-900 hover:border-terracotta transition-colors" title="Hitam Pekat"></button>
+        </div>
+      </div>
+
+      <!-- Jumlah -->
+      <div class="flex items-center gap-4">
+        <p class="text-sm font-medium text-warm-dark">Jumlah</p>
+        <div class="flex items-center border border-border-warm rounded-xl overflow-hidden">
+          <button onclick="changeQty(-1)" class="w-10 h-10 flex items-center justify-center text-warm-mid hover:bg-terracotta-pale hover:text-terracotta transition-colors text-lg font-bold">−</button>
+          <span id="qty" class="w-12 text-center text-sm font-semibold text-warm-dark">1</span>
+          <button onclick="changeQty(1)" class="w-10 h-10 flex items-center justify-center text-warm-mid hover:bg-terracotta-pale hover:text-terracotta transition-colors text-lg font-bold">+</button>
+        </div>
+        <span class="text-xs text-warm-mid">Stok: 12 tersisa</span>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex gap-3">
+        <button class="btn-primary flex-1 flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+          Keranjang
+        </button>
+        <button class="btn-outline flex-1">Beli Sekarang</button>
+        <button class="w-12 h-12 flex items-center justify-center border border-border-warm rounded-full hover:border-terracotta hover:text-terracotta text-warm-mid transition-colors" aria-label="Simpan ke Wishlist">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Info Pengiriman -->
+      <div class="bg-white border border-border-warm rounded-2xl p-4 space-y-3 text-sm">
+        <div class="flex items-start gap-3">
+          <span class="text-lg">🚚</span>
+          <div>
+            <span class="font-medium text-warm-dark">Gratis Ongkir</span>
+            <span class="text-warm-mid"> · Estimasi tiba 2–4 hari kerja</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-lg">🔄</span>
+          <div>
+            <span class="font-medium text-warm-dark">Retur 30 Hari</span>
+            <span class="text-warm-mid"> · Jika produk cacat atau tidak sesuai</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-lg">🛡️</span>
+          <div>
+            <span class="font-medium text-warm-dark">Garansi Keaslian</span>
+            <span class="text-warm-mid"> · 100% produk asli buatan tangan</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Deskripsi Produk (di bawah) -->
+  <div class="mt-10 border-t border-border-warm pt-8">
+    <h2 class="section-title mb-4">Deskripsi Produk</h2>
+    <div class="prose text-warm-mid text-sm leading-relaxed max-w-none space-y-3">
+      <p>
+        Batik Tulis Motif Parang Rusak merupakan salah satu motif batik paling ikonik dari tradisi keraton Jawa. Setiap lembar kain dikerjakan secara <strong class="text-warm-dark">hand-made</strong> oleh pengrajin berpengalaman dengan teknik canting tulis yang membutuhkan ketelitian tinggi.
+      </p>
+      <p>
+        Motif Parang Rusak memiliki makna filosofis tentang ketekunan, semangat pantang menyerah, dan perjalanan hidup yang tak pernah berhenti. Sangat cocok dikenakan pada acara formal, pernikahan, maupun pesta adat.
+      </p>
+      <p>
+        Bahan: <strong class="text-warm-dark">Kain Mori ATBM 100% Cotton</strong> · Pewarna: Napthol & Indigosol alami · Teknik: Batik Tulis Manual.
+      </p>
+    </div>
+
+    <!-- Tags -->
+    <div class="flex flex-wrap gap-2 mt-5">
+      <span class="text-xs text-warm-mid">Tag:</span>
+      <a href="#" class="text-xs text-terracotta hover:underline">#batiktulis</a>
+      <a href="#" class="text-xs text-terracotta hover:underline">#motifparang</a>
+      <a href="#" class="text-xs text-terracotta hover:underline">#warisanbudaya</a>
+      <a href="#" class="text-xs text-terracotta hover:underline">#handmade</a>
+      <a href="#" class="text-xs text-terracotta hover:underline">#jawabatik</a>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  function changeImage(btn, src) {
+    document.getElementById('main-product-image').src = src;
+    document.querySelectorAll('.thumbnail-btn').forEach(b => {
+      b.classList.remove('border-terracotta');
+      b.classList.add('border-border-warm');
+    });
+    btn.classList.remove('border-border-warm');
+    btn.classList.add('border-terracotta');
+  }
+
+  function changeQty(delta) {
+    const el = document.getElementById('qty');
+    let val = parseInt(el.textContent) + delta;
+    if (val < 1) val = 1;
+    if (val > 12) val = 12;
+    el.textContent = val;
+  }
+</script>

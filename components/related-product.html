@@ -1,0 +1,147 @@
+<!-- ============================================================
+     RELATED PRODUCT COMPONENT
+     File: components/related-product.html
+     Berisi: Grid produk-produk terkait dengan kartu produk
+             lengkap (gambar, nama, harga, rating, tombol)
+     ============================================================ -->
+<section class="related-products">
+
+  <!-- Section Header -->
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <h2 class="section-title">Produk Terkait</h2>
+      <p class="text-sm text-warm-mid mt-1">Pilihan batik & kerajinan serupa yang mungkin Anda suka</p>
+    </div>
+    <a href="#" class="text-sm text-terracotta hover:underline font-medium flex items-center gap-1">
+      Lihat Semua
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" id="related-grid">
+
+    <!-- Card 1 -->
+    <article class="product-card bg-white rounded-2xl border border-border-warm overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <div class="relative overflow-hidden aspect-square bg-cream">
+        <img src="https://images.unsplash.com/photo-1604440977230-e3a4d2dde39f?w=400&q=75" alt="Batik Kawung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-warm-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <button class="absolute top-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-warm-mid hover:text-terracotta transition-colors shadow-sm" aria-label="Wishlist">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <span class="absolute top-3 left-3 bg-terracotta text-white text-[10px] font-bold px-2 py-0.5 rounded-full">-20%</span>
+      </div>
+      <div class="p-4">
+        <p class="text-[10px] text-warm-mid mb-1 uppercase tracking-wide">Batik Tulis</p>
+        <h3 class="font-display text-sm font-semibold text-warm-dark leading-snug line-clamp-2">Batik Tulis Motif Kawung Sekar</h3>
+        <div class="flex items-center gap-1 mt-1.5 mb-2">
+          <span class="text-terracotta text-xs">★★★★★</span>
+          <span class="text-xs text-warm-mid">(128)</span>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="text-sm font-semibold text-terracotta">Rp 380.000</span>
+          <span class="text-xs text-warm-mid line-through">Rp 475.000</span>
+        </div>
+        <button class="mt-3 w-full py-2 bg-terracotta-pale text-terracotta text-xs font-medium rounded-xl hover:bg-terracotta hover:text-white transition-all duration-200">
+          + Keranjang
+        </button>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="product-card bg-white rounded-2xl border border-border-warm overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <div class="relative overflow-hidden aspect-square bg-cream">
+        <img src="https://images.unsplash.com/photo-1571513722275-4b41940f54b8?w=400&q=75" alt="Batik Mega Mendung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-warm-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <button class="absolute top-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-warm-mid hover:text-terracotta transition-colors shadow-sm" aria-label="Wishlist">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <span class="absolute top-3 left-3 badge text-[10px]">Terlaris</span>
+      </div>
+      <div class="p-4">
+        <p class="text-[10px] text-warm-mid mb-1 uppercase tracking-wide">Batik Cap</p>
+        <h3 class="font-display text-sm font-semibold text-warm-dark leading-snug line-clamp-2">Batik Mega Mendung Cirebon Premium</h3>
+        <div class="flex items-center gap-1 mt-1.5 mb-2">
+          <span class="text-terracotta text-xs">★★★★★</span>
+          <span class="text-xs text-warm-mid">(94)</span>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="text-sm font-semibold text-terracotta">Rp 295.000</span>
+        </div>
+        <button class="mt-3 w-full py-2 bg-terracotta-pale text-terracotta text-xs font-medium rounded-xl hover:bg-terracotta hover:text-white transition-all duration-200">
+          + Keranjang
+        </button>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="product-card bg-white rounded-2xl border border-border-warm overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <div class="relative overflow-hidden aspect-square bg-cream">
+        <img src="https://images.unsplash.com/photo-1592409508867-64d72c4c2a87?w=400&q=75" alt="Kain Tenun Ikat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-warm-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <button class="absolute top-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-warm-mid hover:text-terracotta transition-colors shadow-sm" aria-label="Wishlist">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <span class="absolute top-3 left-3 bg-terracotta text-white text-[10px] font-bold px-2 py-0.5 rounded-full">-30%</span>
+      </div>
+      <div class="p-4">
+        <p class="text-[10px] text-warm-mid mb-1 uppercase tracking-wide">Tenun Ikat</p>
+        <h3 class="font-display text-sm font-semibold text-warm-dark leading-snug line-clamp-2">Kain Tenun Ikat Sumba NTT Original</h3>
+        <div class="flex items-center gap-1 mt-1.5 mb-2">
+          <span class="text-terracotta text-xs">★★★★</span><span class="text-border-warm text-xs">★</span>
+          <span class="text-xs text-warm-mid">(56)</span>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="text-sm font-semibold text-terracotta">Rp 560.000</span>
+          <span class="text-xs text-warm-mid line-through">Rp 800.000</span>
+        </div>
+        <button class="mt-3 w-full py-2 bg-terracotta-pale text-terracotta text-xs font-medium rounded-xl hover:bg-terracotta hover:text-white transition-all duration-200">
+          + Keranjang
+        </button>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="product-card bg-white rounded-2xl border border-border-warm overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <div class="relative overflow-hidden aspect-square bg-cream">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=75" alt="Batik Sidomukti" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-warm-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <button class="absolute top-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-terracotta transition-colors shadow-sm" aria-label="Wishlist (tersimpan)">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <span class="absolute top-3 left-3 badge text-[10px]">Eksklusif</span>
+      </div>
+      <div class="p-4">
+        <p class="text-[10px] text-warm-mid mb-1 uppercase tracking-wide">Batik Tulis</p>
+        <h3 class="font-display text-sm font-semibold text-warm-dark leading-snug line-clamp-2">Batik Sidomukti Keraton Solo Klasik</h3>
+        <div class="flex items-center gap-1 mt-1.5 mb-2">
+          <span class="text-terracotta text-xs">★★★★★</span>
+          <span class="text-xs text-warm-mid">(212)</span>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="text-sm font-semibold text-terracotta">Rp 725.000</span>
+        </div>
+        <button class="mt-3 w-full py-2 bg-terracotta-pale text-terracotta text-xs font-medium rounded-xl hover:bg-terracotta hover:text-white transition-all duration-200">
+          + Keranjang
+        </button>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Load More -->
+  <div class="text-center mt-8">
+    <button class="btn-outline">Muat Lebih Banyak</button>
+  </div>
+
+</section>

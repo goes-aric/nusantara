@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nusantara Heritage Store — Platform terpercaya produk warisan budaya Indonesia: batik tulis, tenun ikat, kerajinan tangan, dan kuliner otentik." />
+  <title>Batik Tulis Motif Parang Rusak — Nusantara Heritage Store</title>
+
+  <!-- Tailwind CSS via CDN (untuk preview/demo) -->
+  <!-- PRODUCTION: ganti dengan <link rel="stylesheet" href="/output.css" /> setelah npm run build -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: "#FAF7F2",
+            "warm-dark": "#1C1A17",
+            "warm-mid": "#4A4540",
+            terracotta: "#C4623A",
+            "terracotta-light": "#E8835F",
+            "terracotta-pale": "#F5DDD4",
+            "border-warm": "#E5DDD4",
+            "sand": "#D4C5B0",
+          },
+          fontFamily: {
+            display: ["'Playfair Display'", "Georgia", "serif"],
+            body: ["'DM Sans'", "sans-serif"],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts (Playfair Display + DM Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ── Global Base ── */
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #FAF7F2; }
+    ::-webkit-scrollbar-thumb { background: #D4C5B0; border-radius: 3px; }
+
+    /* ── Custom Classes ── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #C4623A; color: white; font-weight: 500;
+      padding: 0.75rem 2rem; border-radius: 9999px;
+      text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;
+      border: none; cursor: pointer; transition: background 0.3s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #E8835F; }
+    .btn-primary:active { transform: scale(0.97); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center;
+      border: 2px solid #C4623A; color: #C4623A; font-weight: 500;
+      padding: 0.625rem 1.5rem; border-radius: 9999px;
+      text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.875rem;
+      background: transparent; cursor: pointer; transition: all 0.3s;
+    }
+    .btn-outline:hover { background: #C4623A; color: white; }
+
+    .section-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #1C1A17; }
+    .divider { border-top: 1px solid #E5DDD4; margin: 1.5rem 0; }
+    .badge {
+      display: inline-block; background: #F5DDD4; color: #C4623A;
+      font-size: 0.75rem; font-weight: 500; padding: 0.25rem 0.75rem; border-radius: 9999px;
+    }
+    .line-clamp-2 {
+      display: -webkit-box; -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+
+    /* ── Animasi ── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in { animation: fadeInUp 0.5s ease both; }
+    .animate-in-delay-1 { animation-delay: 0.1s; }
+    .animate-in-delay-2 { animation-delay: 0.2s; }
+    .animate-in-delay-3 { animation-delay: 0.3s; }
+  </style>
+</head>
+
+<body class="min-h-screen bg-cream">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HEADER
+       Sumber: components/header.html
+       ═══════════════════════════════════════════════════════════ -->
+  <!-- ============================================================
+     HEADER COMPONENT
+     File: components/header.html
+     Berisi: Logo, navigasi utama, search bar, dan ikon cart/user
+     ============================================================ -->
+<header class="sticky top-0 z-50 bg-cream border-b border-border-warm shadow-sm">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Top Bar -->
+    <div class="flex items-center justify-between py-3 border-b border-border-warm/50">
+      <p class="text-xs text-warm-mid tracking-widest uppercase">
+        🚚 Gratis ongkir untuk pembelian di atas Rp 500.000
+      </p>
+      <div class="flex items-center gap-5 text-xs text-warm-mid">
+        <a href="#" class="hover:text-terracotta transition-colors">Lacak Pesanan</a>
+        <span class="text-border-warm">|</span>
+        <a href="#" class="hover:text-terracotta transition-colors">Bantuan</a>
+        <span class="text-border-warm">|</span>
+        <a href="#" class="hover:text-terracotta transition-colors">Masuk</a>
+      </div>
+    </div>
+
+    <!-- Main Header Row -->
+    <div class="flex items-center gap-6 py-4">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 shrink-0">
+        <div class="w-9 h-9 bg-terracotta rounded-lg flex items-center justify-center">
+          <span class="text-white font-display font-bold text-lg leading-none">N</span>
+        </div>
+        <div>
+          <span class="font-display text-xl font-semibold text-warm-dark tracking-tight">Nusantara</span>
+          <span class="block text-[10px] text-warm-mid tracking-[0.2em] uppercase -mt-0.5">Heritage Store</span>
+        </div>
+      </a>
+
+      <!-- Search Bar -->
+      <div class="flex-1 max-w-2xl">
+        <div class="relative group">
+          <input
+            type="text"
+            placeholder="Cari produk, koleksi, atau merek..."
+            class="w-full bg-white border border-border-warm rounded-full py-2.5 pl-5 pr-12
+                   text-sm text-warm-dark placeholder-sand/80 outline-none
+                   focus:border-terracotta focus:ring-2 focus:ring-terracotta/10
+                   transition-all duration-200"
+          />
+          <button
+            class="absolute right-1.5 top-1/2 -translate-y-1/2 
+                   w-8 h-8 bg-terracotta rounded-full 
+                   flex items-center justify-center
+                   hover:bg-terracotta-light transition-colors"
+            aria-label="Cari"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Action Icons -->
+      <div class="flex items-center gap-2 shrink-0">
+        <!-- Wishlist -->
+        <button class="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-terracotta-pale transition-colors group" aria-label="Wishlist">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-warm-mid group-hover:text-terracotta transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </button>
+
+        <!-- Cart -->
+        <button class="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-terracotta-pale transition-colors group" aria-label="Keranjang">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-warm-mid group-hover:text-terracotta transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6" stroke-linecap="round"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="absolute -top-0.5 -right-0.5 w-4 h-4 bg-terracotta text-white text-[10px] font-bold rounded-full flex items-center justify-center">3</span>
+        </button>
+
+        <!-- Profile -->
+        <button class="w-10 h-10 rounded-full border-2 border-border-warm overflow-hidden hover:border-terracotta transition-colors" aria-label="Profil">
+          <div class="w-full h-full bg-sand flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-warm-mid" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/>
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex items-center gap-1 pb-1" aria-label="Navigasi utama">
+      <a href="#" class="px-4 py-2 text-sm font-medium text-warm-dark hover:text-terracotta hover:bg-terracotta-pale rounded-lg transition-all">Beranda</a>
+      <a href="#" class="px-4 py-2 text-sm font-medium text-warm-dark hover:text-terracotta hover:bg-terracotta-pale rounded-lg transition-all">Koleksi</a>
+      <a href="#" class="px-4 py-2 text-sm font-medium text-terracotta bg-terracotta-pale rounded-lg transition-all">Produk</a>
+      <a href="#" class="px-4 py-2 text-sm font-medium text-warm-dark hover:text-terracotta hover:bg-terracotta-pale rounded-lg transition-all">Batik</a>
+      <a href="#" class="px-4 py-2 text-sm font-medium text-warm-dark hover:text-terracotta hover:bg-terracotta-pale rounded-lg transition-all">Kerajinan</a>
+      <a href="#" class="px-4 py-2 text-sm font-medium text-warm-dark hover:text-terracotta hover:bg-terracotta-pale rounded-lg transition-all">Kuliner</a>
+      <a href="#" class="px-4 py-2 text-sm font-medium text-warm-dark hover:text-terracotta hover:bg-terracotta-pale rounded-lg transition-all">Flash Sale</a>
+      <div class="ml-auto">
+        <span class="badge">🔥 Sale hingga 50%</span>
+      </div>
+    </nav>
+
+  </div>
+</header>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MAIN CONTENT AREA
+       Layout: Content Product (kiri, 3/4) + Sidebar (kanan, 1/4)
+       ═══════════════════════════════════════════════════════════ -->
+  <main class="max-w-7xl mx-auto px-6 py-8">
+    <div class="flex gap-8">
+
+      <!-- Kolom Utama (Content + Related Products) -->
+      <div class="flex-1 min-w-0 space-y-12 animate-in">
+
+        <!-- ─────────────────────────────────────────────────────
+             CONTENT PRODUCT
+             Sumber: components/content.html
+             ───────────────────────────────────────────────────── -->
+        <!-- ============================================================
+     CONTENT PRODUCT COMPONENT
+     File: components/content.html
+     Berisi: Galeri foto produk, detail produk, harga, pilihan
+             varian, tombol beli, dan informasi pengiriman
+     ============================================================ -->
+<section class="content-product">
+
+  <!-- Breadcrumb -->
+  <nav class="flex items-center gap-2 text-xs text-warm-mid mb-6" aria-label="Breadcrumb">
+    <a href="#" class="hover:text-terracotta transition-colors">Beranda</a>
+    <svg class="w-3 h-3 text-sand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+    <a href="#" class="hover:text-terracotta transition-colors">Batik</a>
+    <svg class="w-3 h-3 text-sand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+    <span class="text-warm-dark font-medium">Batik Tulis Motif Parang</span>
+  </nav>
+
+  <!-- Product Grid: Gambar kiri + Detail kanan -->
+  <div class="grid grid-cols-2 gap-8">
+
+    <!-- Kolom Kiri: Galeri Foto -->
+    <div>
+      <!-- Foto Utama -->
+      <div class="relative rounded-2xl overflow-hidden bg-white border border-border-warm aspect-square mb-3 group">
+        <img
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+          alt="Batik Tulis Motif Parang Rusak — tampak depan"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          id="main-product-image"
+        />
+        <!-- Badge diskon -->
+        <div class="absolute top-4 left-4">
+          <span class="bg-terracotta text-white text-xs font-bold px-3 py-1 rounded-full">-25%</span>
+        </div>
+        <!-- Badge stok -->
+        <div class="absolute top-4 right-4">
+          <span class="badge">Stok Terbatas</span>
+        </div>
+        <!-- Zoom hint -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-warm-dark/5">
+          <span class="bg-white/90 text-warm-dark text-xs px-3 py-1.5 rounded-full shadow">🔍 Perbesar</span>
+        </div>
+      </div>
+
+      <!-- Thumbnail Gallery -->
+      <div class="flex gap-2 overflow-x-auto pb-1">
+        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80')"
+          class="thumbnail-btn shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 border-terracotta">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=150&q=70" class="w-full h-full object-cover" alt="Thumbnail 1"/>
+        </button>
+        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1604440977230-e3a4d2dde39f?w=600&q=80')"
+          class="thumbnail-btn shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 border-border-warm hover:border-terracotta transition-colors">
+          <img src="https://images.unsplash.com/photo-1604440977230-e3a4d2dde39f?w=150&q=70" class="w-full h-full object-cover" alt="Thumbnail 2"/>
+        </button>
+        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1571513722275-4b41940f54b8?w=600&q=80')"
+          class="thumbnail-btn shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 border-border-warm hover:border-terracotta transition-colors">
+          <img src="https://images.unsplash.com/photo-1571513722275-4b41940f54b8?w=150&q=70" class="w-full h-full object-cover" alt="Thumbnail 3"/>
+        </button>
+        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1592409508867-64d72c4c2a87?w=600&q=80')"
+          class="thumbnail-btn shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 border-border-warm hover:border-terracotta transition-colors">
+          <img src="https://images.unsplash.com/photo-1592409508867-64d72c4c2a87?w=150&q=70" class="w-full h-full object-cover" alt="Thumbnail 4"/>
+        </button>
+      </div>
+    </div>
+
+    <!-- Kolom Kanan: Detail Produk -->
+    <div class="flex flex-col gap-5">
+
+      <!-- Nama & Rating -->
+      <div>
+        <span class="badge mb-2">Batik Tulis Premium</span>
+        <h1 class="font-display text-3xl text-warm-dark leading-snug mt-1">
+          Batik Tulis Motif Parang Rusak
+        </h1>
+        <p class="text-warm-mid text-sm mt-1">oleh <a href="#" class="text-terracotta hover:underline font-medium">Rumah Batik Sekar Jagad</a></p>
+
+        <!-- Rating -->
+        <div class="flex items-center gap-2 mt-2">
+          <div class="flex text-terracotta text-sm" aria-label="Rating 4.8 dari 5">
+            ★★★★★
+          </div>
+          <span class="text-sm font-medium text-warm-dark">4.8</span>
+          <span class="text-xs text-warm-mid">(248 ulasan)</span>
+          <span class="text-border-warm">·</span>
+          <span class="text-xs text-warm-mid">1.2k terjual</span>
+        </div>
+      </div>
+
+      <div class="divider my-0"></div>
+
+      <!-- Harga -->
+      <div>
+        <div class="flex items-baseline gap-3">
+          <span class="font-display text-3xl font-semibold text-terracotta">Rp 487.500</span>
+          <span class="text-warm-mid line-through text-lg">Rp 650.000</span>
+        </div>
+        <p class="text-xs text-warm-mid mt-1">Harga sudah termasuk PPN · Gratis ongkir ke Jawa-Bali</p>
+      </div>
+
+      <!-- Pilih Ukuran -->
+      <div>
+        <p class="text-sm font-medium text-warm-dark mb-2">Pilih Ukuran <span class="text-warm-mid font-normal">(dipilih: M)</span></p>
+        <div class="flex gap-2 flex-wrap">
+          <button class="size-btn px-5 py-2 rounded-lg border-2 border-border-warm text-sm hover:border-terracotta transition-colors text-warm-mid">S</button>
+          <button class="size-btn px-5 py-2 rounded-lg border-2 border-terracotta bg-terracotta-pale text-sm text-terracotta font-medium">M</button>
+          <button class="size-btn px-5 py-2 rounded-lg border-2 border-border-warm text-sm hover:border-terracotta transition-colors text-warm-mid">L</button>
+          <button class="size-btn px-5 py-2 rounded-lg border-2 border-border-warm text-sm hover:border-terracotta transition-colors text-warm-mid">XL</button>
+          <button class="size-btn px-5 py-2 rounded-lg border-2 border-border-warm text-sm hover:border-terracotta transition-colors text-warm-mid">XXL</button>
+        </div>
+        <a href="#" class="text-xs text-terracotta hover:underline mt-1.5 inline-block">Panduan Ukuran →</a>
+      </div>
+
+      <!-- Pilih Warna -->
+      <div>
+        <p class="text-sm font-medium text-warm-dark mb-2">Warna <span class="text-warm-mid font-normal">(dipilih: Indigo Klasik)</span></p>
+        <div class="flex gap-2">
+          <button class="w-9 h-9 rounded-full border-2 border-terracotta bg-indigo-900 ring-2 ring-terracotta ring-offset-2" title="Indigo Klasik" aria-pressed="true"></button>
+          <button class="w-9 h-9 rounded-full border-2 border-border-warm bg-amber-700 hover:border-terracotta transition-colors" title="Coklat Sogan"></button>
+          <button class="w-9 h-9 rounded-full border-2 border-border-warm bg-emerald-800 hover:border-terracotta transition-colors" title="Hijau Daun"></button>
+          <button class="w-9 h-9 rounded-full border-2 border-border-warm bg-stone-900 hover:border-terracotta transition-colors" title="Hitam Pekat"></button>
+        </div>
+      </div>
+
+      <!-- Jumlah -->
+      <div class="flex items-center gap-4">
+        <p class="text-sm font-medium text-warm-dark">Jumlah</p>
+        <div class="flex items-center border border-border-warm rounded-xl overflow-hidden">
+          <button onclick="changeQty(-1)" class="w-10 h-10 flex items-center justify-center text-warm-mid hover:bg-terracotta-pale hover:text-terracotta transition-colors text-lg font-bold">−</button>
+          <span id="qty" class="w-12 text-center text-sm font-semibold text-warm-dark">1</span>
+          <button onclick="changeQty(1)" class="w-10 h-10 flex items-center justify-center text-warm-mid hover:bg-terracotta-pale hover:text-terracotta transition-colors text-lg font-bold">+</button>
+        </div>
+        <span class="text-xs text-warm-mid">Stok: 12 tersisa</span>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex gap-3">
+        <button class="btn-primary flex-1 flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+          Keranjang
+        </button>
+        <button class="btn-outline flex-1">Beli Sekarang</button>
+        <button class="w-12 h-12 flex items-center justify-center border border-border-warm rounded-full hover:border-terracotta hover:text-terracotta text-warm-mid transition-colors" aria-label="Simpan ke Wishlist">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Info Pengiriman -->
+      <div class="bg-white border border-border-warm rounded-2xl p-4 space-y-3 text-sm">
+        <div class="flex items-start gap-3">
+          <span class="text-lg">🚚</span>
+          <div>
+            <span class="font-medium text-warm-dark">Gratis Ongkir</span>
+            <span class="text-warm-mid"> · Estimasi tiba 2–4 hari kerja</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-lg">🔄</span>
+          <div>
+            <span class="font-medium text-warm-dark">Retur 30 Hari</span>
+            <span class="text-warm-mid"> · Jika produk cacat atau tidak sesuai</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-lg">🛡️</span>
+          <div>
+            <span class="font-medium text-warm-dark">Garansi Keaslian</span>
+            <span class="text-warm-mid"> · 100% produk asli buatan tangan</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Deskripsi Produk (di bawah) -->
+  <div class="mt-10 border-t border-border-warm pt-8">
+    <h2 class="section-title mb-4">Deskripsi Produk</h2>
+    <div class="prose text-warm-mid text-sm leading-relaxed max-w-none space-y-3">
+      <p>
+        Batik Tulis Motif Parang Rusak merupakan salah satu motif batik paling ikonik dari tradisi keraton Jawa. Setiap lembar kain dikerjakan secara <strong class="text-warm-dark">hand-made</strong> oleh pengrajin berpengalaman dengan teknik canting tulis yang membutuhkan ketelitian tinggi.
+      </p>
+      <p>
+        Motif Parang Rusak memiliki makna filosofis tentang ketekunan, semangat pantang menyerah, dan perjalanan hidup yang tak pernah berhenti. Sangat cocok dikenakan pada acara formal, pernikahan, maupun pesta adat.
+      </p>
+      <p>
+        Bahan: <strong class="text-warm-dark">Kain Mori ATBM 100% Cotton</strong> · Pewarna: Napthol & Indigosol alami · Teknik: Batik Tulis Manual.
+      </p>
+    </div>
+
+    <!-- Tags -->
+    <div class="flex flex-wrap gap-2 mt-5">
+      <span class="text-xs text-warm-mid">Tag:</span>
+      <a href="#" class="text-xs text-terracotta hover:underline">#batiktulis</a>
+      <a href="#" class="text-xs text-terracotta hover:underline">#motifparang</a>
+      <a href="#" class="text-xs text-terracotta hover:underline">#warisanbudaya</a>
+      <a href="#" class="text-xs text-terracotta hover:underline">#handmade</a>
+      <a href="#" class="text-xs text-terracotta hover:underline">#jawabatik</a>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  function changeImage(btn, src) {
+    document.getElementById('main-product-image').src = src;
+    document.querySelectorAll('.thumbnail-btn').forEach(b => {
+      b.classList.remove('border-terracotta');
+      b.classList.add('border-border-warm');
+    });
+    btn.classList.remove('border-border-warm');
+    btn.classList.add('border-terracotta');
+  }
+
+  function changeQty(delta) {
+    const el = document.getElementById('qty');
+    let val = parseInt(el.textContent) + delta;
+    if (val < 1) val = 1;
+    if (val > 12) val = 12;
+    el.textContent = val;
+  }
+</script>
+
+
+        <!-- Divider antara Content dan Related Products -->
+        <hr class="border-border-warm" />
+
+        <!-- ─────────────────────────────────────────────────────
+             RELATED PRODUCT
+             Sumber: components/related-product.html
+             ───────────────────────────────────────────────────── -->
+        <!-- ============================================================
+     RELATED PRODUCT COMPONENT
+     File: components/related-product.html
+     Berisi: Grid produk-produk terkait dengan kartu produk
+             lengkap (gambar, nama, harga, rating, tombol)
+     ============================================================ -->
+<section class="related-products">
+
+  <!-- Section Header -->
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <h2 class="section-title">Produk Terkait</h2>
+      <p class="text-sm text-warm-mid mt-1">Pilihan batik & kerajinan serupa yang mungkin Anda suka</p>
+    </div>
+    <a href="#" class="text-sm text-terracotta hover:underline font-medium flex items-center gap-1">
+      Lihat Semua
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" id="related-grid">
+
+    <!-- Card 1 -->
+    <article class="product-card bg-white rounded-2xl border border-border-warm overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <div class="relative overflow-hidden aspect-square bg-cream">
+        <img src="https://images.unsplash.com/photo-1604440977230-e3a4d2dde39f?w=400&q=75" alt="Batik Kawung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-warm-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <button class="absolute top-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-warm-mid hover:text-terracotta transition-colors shadow-sm" aria-label="Wishlist">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <span class="absolute top-3 left-3 bg-terracotta text-white text-[10px] font-bold px-2 py-0.5 rounded-full">-20%</span>
+      </div>
+      <div class="p-4">
+        <p class="text-[10px] text-warm-mid mb-1 uppercase tracking-wide">Batik Tulis</p>
+        <h3 class="font-display text-sm font-semibold text-warm-dark leading-snug line-clamp-2">Batik Tulis Motif Kawung Sekar</h3>
+        <div class="flex items-center gap-1 mt-1.5 mb-2">
+          <span class="text-terracotta text-xs">★★★★★</span>
+          <span class="text-xs text-warm-mid">(128)</span>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="text-sm font-semibold text-terracotta">Rp 380.000</span>
+          <span class="text-xs text-warm-mid line-through">Rp 475.000</span>
+        </div>
+        <button class="mt-3 w-full py-2 bg-terracotta-pale text-terracotta text-xs font-medium rounded-xl hover:bg-terracotta hover:text-white transition-all duration-200">
+          + Keranjang
+        </button>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="product-card bg-white rounded-2xl border border-border-warm overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <div class="relative overflow-hidden aspect-square bg-cream">
+        <img src="https://images.unsplash.com/photo-1571513722275-4b41940f54b8?w=400&q=75" alt="Batik Mega Mendung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-warm-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <button class="absolute top-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-warm-mid hover:text-terracotta transition-colors shadow-sm" aria-label="Wishlist">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <span class="absolute top-3 left-3 badge text-[10px]">Terlaris</span>
+      </div>
+      <div class="p-4">
+        <p class="text-[10px] text-warm-mid mb-1 uppercase tracking-wide">Batik Cap</p>
+        <h3 class="font-display text-sm font-semibold text-warm-dark leading-snug line-clamp-2">Batik Mega Mendung Cirebon Premium</h3>
+        <div class="flex items-center gap-1 mt-1.5 mb-2">
+          <span class="text-terracotta text-xs">★★★★★</span>
+          <span class="text-xs text-warm-mid">(94)</span>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="text-sm font-semibold text-terracotta">Rp 295.000</span>
+        </div>
+        <button class="mt-3 w-full py-2 bg-terracotta-pale text-terracotta text-xs font-medium rounded-xl hover:bg-terracotta hover:text-white transition-all duration-200">
+          + Keranjang
+        </button>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="product-card bg-white rounded-2xl border border-border-warm overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <div class="relative overflow-hidden aspect-square bg-cream">
+        <img src="https://images.unsplash.com/photo-1592409508867-64d72c4c2a87?w=400&q=75" alt="Kain Tenun Ikat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-warm-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <button class="absolute top-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-warm-mid hover:text-terracotta transition-colors shadow-sm" aria-label="Wishlist">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <span class="absolute top-3 left-3 bg-terracotta text-white text-[10px] font-bold px-2 py-0.5 rounded-full">-30%</span>
+      </div>
+      <div class="p-4">
+        <p class="text-[10px] text-warm-mid mb-1 uppercase tracking-wide">Tenun Ikat</p>
+        <h3 class="font-display text-sm font-semibold text-warm-dark leading-snug line-clamp-2">Kain Tenun Ikat Sumba NTT Original</h3>
+        <div class="flex items-center gap-1 mt-1.5 mb-2">
+          <span class="text-terracotta text-xs">★★★★</span><span class="text-border-warm text-xs">★</span>
+          <span class="text-xs text-warm-mid">(56)</span>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="text-sm font-semibold text-terracotta">Rp 560.000</span>
+          <span class="text-xs text-warm-mid line-through">Rp 800.000</span>
+        </div>
+        <button class="mt-3 w-full py-2 bg-terracotta-pale text-terracotta text-xs font-medium rounded-xl hover:bg-terracotta hover:text-white transition-all duration-200">
+          + Keranjang
+        </button>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="product-card bg-white rounded-2xl border border-border-warm overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <div class="relative overflow-hidden aspect-square bg-cream">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=75" alt="Batik Sidomukti" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-warm-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <button class="absolute top-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-terracotta transition-colors shadow-sm" aria-label="Wishlist (tersimpan)">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <span class="absolute top-3 left-3 badge text-[10px]">Eksklusif</span>
+      </div>
+      <div class="p-4">
+        <p class="text-[10px] text-warm-mid mb-1 uppercase tracking-wide">Batik Tulis</p>
+        <h3 class="font-display text-sm font-semibold text-warm-dark leading-snug line-clamp-2">Batik Sidomukti Keraton Solo Klasik</h3>
+        <div class="flex items-center gap-1 mt-1.5 mb-2">
+          <span class="text-terracotta text-xs">★★★★★</span>
+          <span class="text-xs text-warm-mid">(212)</span>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="text-sm font-semibold text-terracotta">Rp 725.000</span>
+        </div>
+        <button class="mt-3 w-full py-2 bg-terracotta-pale text-terracotta text-xs font-medium rounded-xl hover:bg-terracotta hover:text-white transition-all duration-200">
+          + Keranjang
+        </button>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Load More -->
+  <div class="text-center mt-8">
+    <button class="btn-outline">Muat Lebih Banyak</button>
+  </div>
+
+</section>
+
+
+      </div>
+
+      <!-- ─────────────────────────────────────────────────────
+           SIDEBAR
+           Sumber: components/sidebar.html
+           Lebar tetap 280px, posisi sticky
+           ───────────────────────────────────────────────────── -->
+      <aside class="w-72 shrink-0 animate-in animate-in-delay-1">
+        <div class="sticky top-28 space-y-0">
+          <!-- ============================================================
+     SIDEBAR COMPONENT
+     File: components/sidebar.html
+     Berisi: Filter kategori, filter harga, filter rating,
+             filter asal daerah, dan promo aktif
+     ============================================================ -->
+<aside class="sidebar">
+
+  <!-- Filter Header -->
+  <div class="flex items-center justify-between mb-5">
+    <h2 class="font-display text-lg text-warm-dark">Filter</h2>
+    <button class="text-xs text-terracotta hover:underline">Reset Semua</button>
+  </div>
+
+  <!-- Kategori -->
+  <div class="sidebar-section mb-6">
+    <h3 class="font-medium text-sm text-warm-dark mb-3 flex items-center justify-between">
+      Kategori
+      <svg class="w-4 h-4 text-warm-mid" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </h3>
+    <ul class="space-y-1.5">
+      <li>
+        <label class="flex items-center gap-2.5 cursor-pointer group">
+          <input type="checkbox" checked class="w-4 h-4 accent-terracotta rounded" />
+          <span class="text-sm text-warm-dark group-hover:text-terracotta transition-colors">Batik Tulis</span>
+          <span class="ml-auto text-xs text-warm-mid bg-border-warm/50 px-2 py-0.5 rounded-full">48</span>
+        </label>
+      </li>
+      <li>
+        <label class="flex items-center gap-2.5 cursor-pointer group">
+          <input type="checkbox" class="w-4 h-4 accent-terracotta rounded" />
+          <span class="text-sm text-warm-dark group-hover:text-terracotta transition-colors">Batik Cap</span>
+          <span class="ml-auto text-xs text-warm-mid bg-border-warm/50 px-2 py-0.5 rounded-full">32</span>
+        </label>
+      </li>
+      <li>
+        <label class="flex items-center gap-2.5 cursor-pointer group">
+          <input type="checkbox" class="w-4 h-4 accent-terracotta rounded" />
+          <span class="text-sm text-warm-dark group-hover:text-terracotta transition-colors">Batik Kombinasi</span>
+          <span class="ml-auto text-xs text-warm-mid bg-border-warm/50 px-2 py-0.5 rounded-full">19</span>
+        </label>
+      </li>
+      <li>
+        <label class="flex items-center gap-2.5 cursor-pointer group">
+          <input type="checkbox" class="w-4 h-4 accent-terracotta rounded" />
+          <span class="text-sm text-warm-dark group-hover:text-terracotta transition-colors">Kerajinan Kayu</span>
+          <span class="ml-auto text-xs text-warm-mid bg-border-warm/50 px-2 py-0.5 rounded-full">27</span>
+        </label>
+      </li>
+      <li>
+        <label class="flex items-center gap-2.5 cursor-pointer group">
+          <input type="checkbox" class="w-4 h-4 accent-terracotta rounded" />
+          <span class="text-sm text-warm-dark group-hover:text-terracotta transition-colors">Gerabah & Keramik</span>
+          <span class="ml-auto text-xs text-warm-mid bg-border-warm/50 px-2 py-0.5 rounded-full">14</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+
+  <div class="divider my-0 mb-6"></div>
+
+  <!-- Rentang Harga -->
+  <div class="sidebar-section mb-6">
+    <h3 class="font-medium text-sm text-warm-dark mb-3">Rentang Harga</h3>
+    <div class="space-y-3">
+      <input
+        type="range"
+        min="0"
+        max="2000000"
+        value="650000"
+        class="w-full accent-terracotta"
+        id="price-range"
+        oninput="updatePrice(this.value)"
+      />
+      <div class="flex justify-between text-xs text-warm-mid">
+        <span>Rp 0</span>
+        <span id="price-display" class="text-terracotta font-medium">Rp 650.000</span>
+        <span>Rp 2jt</span>
+      </div>
+      <div class="flex gap-2">
+        <input type="text" placeholder="Min" class="flex-1 border border-border-warm rounded-lg px-3 py-1.5 text-xs text-warm-dark outline-none focus:border-terracotta" value="0"/>
+        <span class="text-warm-mid text-xs self-center">—</span>
+        <input type="text" placeholder="Max" class="flex-1 border border-border-warm rounded-lg px-3 py-1.5 text-xs text-warm-dark outline-none focus:border-terracotta" value="650.000"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider my-0 mb-6"></div>
+
+  <!-- Rating -->
+  <div class="sidebar-section mb-6">
+    <h3 class="font-medium text-sm text-warm-dark mb-3">Rating Minimum</h3>
+    <div class="space-y-1.5">
+      <label class="flex items-center gap-2 cursor-pointer group">
+        <input type="radio" name="rating" class="accent-terracotta" checked />
+        <span class="text-terracotta text-sm">★★★★★</span>
+        <span class="text-xs text-warm-mid ml-1">5.0</span>
+      </label>
+      <label class="flex items-center gap-2 cursor-pointer group">
+        <input type="radio" name="rating" class="accent-terracotta" />
+        <span class="text-terracotta text-sm">★★★★</span><span class="text-border-warm text-sm">★</span>
+        <span class="text-xs text-warm-mid ml-1">4.0+</span>
+      </label>
+      <label class="flex items-center gap-2 cursor-pointer group">
+        <input type="radio" name="rating" class="accent-terracotta" />
+        <span class="text-terracotta text-sm">★★★</span><span class="text-border-warm text-sm">★★</span>
+        <span class="text-xs text-warm-mid ml-1">3.0+</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="divider my-0 mb-6"></div>
+
+  <!-- Asal Daerah -->
+  <div class="sidebar-section mb-6">
+    <h3 class="font-medium text-sm text-warm-dark mb-3">Asal Daerah</h3>
+    <div class="flex flex-wrap gap-2">
+      <button class="px-3 py-1 text-xs border-2 border-terracotta bg-terracotta-pale text-terracotta rounded-full font-medium">Yogyakarta</button>
+      <button class="px-3 py-1 text-xs border border-border-warm text-warm-mid rounded-full hover:border-terracotta hover:text-terracotta transition-colors">Solo</button>
+      <button class="px-3 py-1 text-xs border border-border-warm text-warm-mid rounded-full hover:border-terracotta hover:text-terracotta transition-colors">Pekalongan</button>
+      <button class="px-3 py-1 text-xs border border-border-warm text-warm-mid rounded-full hover:border-terracotta hover:text-terracotta transition-colors">Cirebon</button>
+      <button class="px-3 py-1 text-xs border border-border-warm text-warm-mid rounded-full hover:border-terracotta hover:text-terracotta transition-colors">Madura</button>
+      <button class="px-3 py-1 text-xs border border-border-warm text-warm-mid rounded-full hover:border-terracotta hover:text-terracotta transition-colors">Bali</button>
+    </div>
+  </div>
+
+  <div class="divider my-0 mb-6"></div>
+
+  <!-- Promo Banner -->
+  <div class="bg-gradient-to-br from-terracotta to-terracotta-light rounded-2xl p-4 text-white text-center">
+    <p class="text-2xl mb-1">🎁</p>
+    <p class="font-display text-base font-semibold">Promo Hari Ini</p>
+    <p class="text-xs opacity-90 mt-1 mb-3">Diskon 25% + cashback Rp 50rb untuk pembelian pertama</p>
+    <button class="bg-white text-terracotta text-xs font-bold px-5 py-2 rounded-full hover:bg-cream transition-colors">
+      Pakai Sekarang
+    </button>
+  </div>
+
+  <!-- Toko Terpercaya -->
+  <div class="mt-6 bg-white border border-border-warm rounded-2xl p-4">
+    <h3 class="font-medium text-sm text-warm-dark mb-3">🏆 Toko Pilihan</h3>
+    <div class="space-y-3">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center text-sm font-bold text-indigo-700 shrink-0">SJ</div>
+        <div class="min-w-0">
+          <p class="text-xs font-medium text-warm-dark truncate">Sekar Jagad Batik</p>
+          <p class="text-[10px] text-warm-mid">★ 4.9 · 3.2k penjualan</p>
+        </div>
+        <button class="shrink-0 text-xs text-terracotta border border-terracotta rounded-full px-2.5 py-1 hover:bg-terracotta-pale transition-colors">Ikuti</button>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center text-sm font-bold text-amber-700 shrink-0">NK</div>
+        <div class="min-w-0">
+          <p class="text-xs font-medium text-warm-dark truncate">Nusantara Kriya</p>
+          <p class="text-[10px] text-warm-mid">★ 4.8 · 1.7k penjualan</p>
+        </div>
+        <button class="shrink-0 text-xs text-terracotta border border-terracotta rounded-full px-2.5 py-1 hover:bg-terracotta-pale transition-colors">Ikuti</button>
+      </div>
+    </div>
+  </div>
+
+</aside>
+
+<script>
+  function updatePrice(value) {
+    const formatted = new Intl.NumberFormat('id-ID').format(value);
+    document.getElementById('price-display').textContent = 'Rp ' + formatted;
+  }
+</script>
+
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+       Sumber: components/footer.html
+       ═══════════════════════════════════════════════════════════ -->
+  <!-- ============================================================
+     FOOTER COMPONENT
+     File: components/footer.html
+     Berisi: Logo, link kolom navigasi, newsletter,
+             sosial media, dan copyright
+     ============================================================ -->
+<footer class="bg-warm-dark text-white">
+
+  <!-- Main Footer Content -->
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+
+      <!-- Brand Column -->
+      <div class="lg:col-span-2">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-terracotta rounded-xl flex items-center justify-center">
+            <span class="text-white font-display font-bold text-xl leading-none">N</span>
+          </div>
+          <div>
+            <span class="font-display text-xl font-semibold text-white">Nusantara</span>
+            <span class="block text-[10px] text-sand/70 tracking-[0.2em] uppercase -mt-0.5">Heritage Store</span>
+          </div>
+        </a>
+
+        <p class="text-sand/70 text-sm leading-relaxed mb-5 max-w-xs">
+          Platform terpercaya untuk produk warisan budaya Indonesia — dari batik tulis, tenun ikat, kerajinan tangan, hingga kuliner otentik Nusantara.
+        </p>
+
+        <!-- Social Media -->
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-terracotta transition-colors" aria-label="Instagram">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-terracotta transition-colors" aria-label="Facebook">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-terracotta transition-colors" aria-label="YouTube">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-terracotta transition-colors" aria-label="TikTok">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links Column 1 -->
+      <div>
+        <h4 class="font-body font-semibold text-sm mb-4 text-sand/80 uppercase tracking-widest">Belanja</h4>
+        <ul class="space-y-2.5 text-sm text-sand/60">
+          <li><a href="#" class="hover:text-terracotta-light transition-colors">Semua Produk</a></li>
+          <li><a href="#" class="hover:text-terracotta-light transition-colors">Batik Tulis</a></li>
+          <li><a href="#" class="hover:text-terracotta-light transition-colors">Batik Cap</a></li>
+          <li><a href="#" class="hover:text-terracotta-light transition-colors">Tenun Ikat</a></li>
+          <li><a href="#" class="hover:text-terracotta-light transition-colors">Kerajinan Kayu</a></li>
+          <li><a href="#" class="hover:text-terracotta-light transition-colors">Kuliner Nusantara</a></li>
+          <li><a href="#" class="hover:text-terracotta-light transition-colors">Flash Sale 🔥</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2 -->
+      <div>
+        <h4 class="font-body font-semibold text-sm mb-4 text-sand/80 uppercase tracking-widest">Layanan</h4>
+        <ul class="space-y-2.5 text-sm text-sand/60">
+          <li><a href="#" class="hover:text-terracotta-light transition-colors">Tentang Kami</a></li>
+          <li><a href="#" class="hover:text-terracotta-light transition-colors">Cara Berbelanja</a></li>
+          <li><a href="#" class="hover:text-terracotta-light transition-colors">Lacak Pesanan</a></li>
+          <li><a href="#" class="hover:text-terracotta-light transition-colors">Kebijakan Retur</a></li>
+          <li><a href="#" class="hover:text-terracotta-light transition-colors">Jadi Mitra Penjual</a></li>
+          <li><a href="#" class="hover:text-terracotta-light transition-colors">Pusat Bantuan</a></li>
+          <li><a href="#" class="hover:text-terracotta-light transition-colors">Hubungi Kami</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+        <h4 class="font-body font-semibold text-sm mb-4 text-sand/80 uppercase tracking-widest">Newsletter</h4>
+        <p class="text-sand/60 text-sm mb-4 leading-relaxed">Dapatkan info promo eksklusif dan koleksi terbaru langsung di inbox Anda.</p>
+        <div class="flex flex-col gap-2">
+          <input
+            type="email"
+            placeholder="email@contoh.com"
+            class="bg-white/10 border border-white/20 rounded-xl px-4 py-2.5 text-sm text-white placeholder-sand/40 outline-none focus:border-terracotta focus:bg-white/15 transition-all"
+          />
+          <button class="bg-terracotta hover:bg-terracotta-light text-white text-sm font-medium py-2.5 rounded-xl transition-colors">
+            Berlangganan
+          </button>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="mt-6">
+          <p class="text-[10px] text-sand/50 uppercase tracking-widest mb-2">Metode Pembayaran</p>
+          <div class="flex flex-wrap gap-2">
+            <div class="bg-white rounded px-2 py-1 text-[10px] font-bold text-warm-dark">VISA</div>
+            <div class="bg-white rounded px-2 py-1 text-[10px] font-bold text-warm-dark">GoPay</div>
+            <div class="bg-white rounded px-2 py-1 text-[10px] font-bold text-warm-dark">OVO</div>
+            <div class="bg-white rounded px-2 py-1 text-[10px] font-bold text-warm-dark">BCA</div>
+            <div class="bg-white rounded px-2 py-1 text-[10px] font-bold text-warm-dark">BRI</div>
+            <div class="bg-white rounded px-2 py-1 text-[10px] font-bold text-warm-dark">QRIS</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-xs text-sand/50">
+        © 2025 Nusantara Heritage Store. Hak Cipta Dilindungi.
+      </p>
+      <div class="flex items-center gap-5 text-xs text-sand/50">
+        <a href="#" class="hover:text-sand/80 transition-colors">Kebijakan Privasi</a>
+        <a href="#" class="hover:text-sand/80 transition-colors">Syarat & Ketentuan</a>
+        <a href="#" class="hover:text-sand/80 transition-colors">Peta Situs</a>
+      </div>
+      <p class="text-xs text-sand/40">
+        🇮🇩 Bangga Produk Indonesia
+      </p>
+    </div>
+  </div>
+
+</footer>
+
+
+</body>
+</html>

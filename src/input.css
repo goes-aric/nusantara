@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: #FAF7F2;
+    color: #1C1A17;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+@layer components {
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FAF7F2;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D4C5B0;
+    border-radius: 3px;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply bg-terracotta text-white font-body font-medium px-8 py-3 
+           rounded-full transition-all duration-300 
+           hover:bg-terracotta-light active:scale-95 
+           tracking-wide text-sm uppercase;
+  }
+
+  .btn-outline {
+    @apply border border-terracotta text-terracotta font-body font-medium 
+           px-6 py-2.5 rounded-full transition-all duration-300 
+           hover:bg-terracotta hover:text-white text-sm uppercase tracking-wide;
+  }
+
+  /* ── Section Title ── */
+  .section-title {
+    @apply font-display text-2xl text-warm-dark;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    @apply border-t border-border-warm my-6;
+  }
+
+  /* ── Badge ── */
+  .badge {
+    @apply inline-block bg-terracotta-pale text-terracotta text-xs 
+           font-body font-medium px-3 py-1 rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
